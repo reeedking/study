@@ -15,6 +15,8 @@ public class TicTacToe {
         setBox(x, y);
         if (isWin())
             return lastPlayer + " is the winner";
+        if (isDraw())
+            return "The result is draw";
         return "No winner";
     }
 
@@ -26,6 +28,10 @@ public class TicTacToe {
             if (board[i][0] + board[i][1] + board[i][2] == playerTotal)
                 return true;
         }
+        if (board[0][0] + board[1][1] + board[2][2] == playerTotal)
+            return true;
+        if (board[0][2] + board[1][1] + board[2][0] == playerTotal)
+            return true;
         return false;
     }
 
@@ -45,5 +51,15 @@ public class TicTacToe {
         if (lastPlayer == 'X')
             return 'O';
         return 'X';
+    }
+
+    private boolean isDraw() {
+        for (int x = 0; x < SIZE; x++) {
+            for (int y = 0; y < SIZE; y++) {
+                if (board[x][y] == '\0')
+                    return false;
+            }
+        }
+        return true;
     }
 }
