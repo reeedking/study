@@ -2,9 +2,13 @@ package com.reeedking.study.shipgame;
 
 public enum Direction {
 
+    // 北部
     NORTH(0, 'N'),
+    // 东部
     EAST(1, 'E'),
+    // 南部
     SOUTH(2, 'S'),
+    // 西部
     WEST(3, 'W'),
     NONE(4, 'X');
 
