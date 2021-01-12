@@ -4,16 +4,31 @@ public class Ship {
 
     private final Location location;
 
+    private Planet planet;
+
     public Location getLocation() {
         return location;
     }
 
-    public Ship(Location location) {
+    public Planet getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(Planet planet) {
+        this.planet = planet;
+    }
+
+//    public Ship(Location location) {
+//        this.location = location;
+//    }
+
+    public Ship(Location location, Planet planet) {
         this.location = location;
+        this.planet = planet;
     }
 
     public boolean moveForward() {
-        return location.forward();
+        return location.forward(planet.getMax());
     }
 
     public boolean moveBackward() {

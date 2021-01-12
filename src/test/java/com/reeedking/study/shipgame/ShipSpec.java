@@ -11,10 +11,14 @@ public class ShipSpec {
 
     private Location location;
 
+    private Planet planet;
+
     @BeforeEach
     public void beforeTest() {
         location = new Location(new Point(21, 13), Direction.NORTH);
-        ship = new Ship(location);
+        Point max = new Point(50, 50);
+        planet = new Planet(max);
+        ship = new Ship(location, planet);
     }
 
 
@@ -74,5 +78,18 @@ public class ShipSpec {
         assertEquals(ship.getLocation(), expected);
     }
 
+    @Test
+    public void whenInstantiatedThenPlanetIsStored() {
+        assertEquals(ship.getPlanet(), planet);
+    }
+
+    @Test
+    public void whenOverpassEastBoundaryThenRotary() {
+        location.setDirection(Direction.EAST);
+        location.getPoint().setX(planet.getMax().getX());
+        ship.receiveCommands("f");
+        assertEquals(location.getX(), 1);
+
+    }
 
 }
