@@ -3,7 +3,7 @@ package com.reeedking.study.shipgame;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DirectionSpec {
+public class DirectionTest {
 
     @Test
     public void whenGetFromShortNameNThenReturnDirectionN() {

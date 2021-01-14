@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class LocationSpec {
+public class LocationTest {
 
     private final int x = 12;
     private final int y = 32;

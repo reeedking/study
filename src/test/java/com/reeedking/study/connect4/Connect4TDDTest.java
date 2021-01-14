@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class ConnectTDDspec {
+public class Connect4TDDTest {
 
     private Connect4TDD tested;
 
@@ -139,7 +139,7 @@ public class ConnectTDDspec {
 
     @Test
     public void when4Diagonal2DiscsAreConnectedThenThatPlayerWins() {
-        int[] gameplay = new int[]{3, 4, 2, 3, 2, 2, 2, 1, 1, 1, 1};
+        int[] gameplay = new int[]{3, 4, 2, 3, 2, 2, 1, 1, 1, 1};
         for (int i : gameplay)
             tested.putDiscInColumn(i);
         assertThat(tested.getWinner(), is("G"));

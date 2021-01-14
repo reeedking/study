@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class PlanetSpec {
+public class PlanetTest {
 
     private Planet planet;
     private final Point max = new Point(50, 50);
