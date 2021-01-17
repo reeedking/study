@@ -1,5 +1,10 @@
 spring:
   redis:
     port: 6379
-    host: 192.168.0.123
-    database: 1
+    host: 192.168.0.104
+    database: 0
+server:
+  servlet:
+    context-path: /Study
+  port: 8080
+
