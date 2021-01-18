@@ -1,36 +1,13 @@
 package com.reeedking.study.game;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
-import java.util.concurrent.TimeUnit;
-
-@Service
+@Component
 public class TicTacToeCollection {
 
-    @Resource
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Resource
+    @Autowired
     private RedisTemplate redisTemplate;
-
-
-    public void set(String key, String value) {
-        stringRedisTemplate.opsForValue().set(key, value);
-    }
-
-    public String get(String key) {
-        return stringRedisTemplate.opsForValue().get(key);
-    }
-
-    public void setTimeoutMin(String key, String value, int min) {
-        stringRedisTemplate.opsForValue().set(key, value, 3, TimeUnit.MINUTES);
-    }
-
-    public void delete(String key) {
-        stringRedisTemplate.delete(key);
-    }
 
 }
